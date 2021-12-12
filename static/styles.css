@@ -1,0 +1,58 @@
+body {
+    overflow-x:hidden;
+    font-family: 'Lato', sans-serif !important;
+    color: white;
+ }
+
+/* Navbar */
+.navbar{
+    font-size: 20px;
+    background: rgba(0,0,0,0) !important;
+}
+
+.navbar-brand img {
+    height: 100px;
+    /* put value of image height as your need */
+    float: center;
+    margin-right: 1px;
+  }
+
+.navbar-nav > .active > a { 
+    background-color: white ; 
+}
+
+
+li a:hover {
+    text-decoration: none;
+}
+/* Slider */
+
+.carousel-item{
+    height: 100vh;
+}
+
+
+
+/* socials */
+.div .socials {
+    display: inline-block;
+    margin: 0 0 0.25em 1em;
+}
+
+.fa-instagram {
+    color: whitesmoke;
+  }
+.fa-whatsapp{
+    color: whitesmoke;
+  }
+
+.fa-vk{
+    color: whitesmoke;
+  }
+
+.fa-telegram{
+    color: whitesmoke;
+  }
+.fa-twitter{
+    color: whitesmoke;
+  }
