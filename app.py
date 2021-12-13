@@ -18,7 +18,15 @@ def studio():
 
 @app.route('/portfolio')
 def portfolio():
-    return render_template('portfolio.html',title='Portfolio')
+    street_folders = os.listdir('./static/portfolio/Street')
+    street_paths = ['/portfolio/Street/'+street_folder for street_folder in street_folders]
+    street_photos = [street_path+'/'+os.listdir('./static/'+street_path)[0] for street_path in street_paths]
+
+    studio_folders = os.listdir('./static/portfolio/Studio')
+    studio_paths = ['/portfolio/Studio/'+studio_folder for studio_folder in studio_folders]
+    studio_photos = [studio_path+'/'+os.listdir('./static/'+studio_path)[0] for studio_path in studio_paths]
+    print(studio_photos)
+    return render_template('portfolio.html',title='Portfolio',street_photos=street_photos,studio_photos=studio_photos)
 
 @app.route('/portfolio/<collection>')
 def sub_portfolio(collection):
@@ -42,4 +50,4 @@ def show_collection(collection,shooting):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(debug=True)

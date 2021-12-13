@@ -24,14 +24,37 @@
 <div class="row m-3">
     <div class="container col-12 col-sm-6 col-lg-3">
         <a href="portfolio/street">
-            <img class='w-100 mt-4' src="../static/img/wc1.jpg" alt="...">
-            <div class="bottom-right">Street</div>
+            <div id="carouselExampleFade1" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                
+                {% set count = namespace(value=0) %}
+                {% for photo in street_photos %}
+                
+                <div class="carousel-item {% if count.value==0 %} active {% endif %}" data-bs-interval="1000" >
+                    <img class='w-100 mt-4' src="{{ url_for('static',filename=photo) }}" alt="...">
+                    <div class="bottom-right">Street</div>
+                </div>
+                
+                {% set count.value = count.value + 1 %}  
+                {% endfor %}
+                
+            </div>
         </a>
     </div>
     <div class="container col-12 col-sm-6 col-lg-3">
         <a href="portfolio/studio">
-            <img class='w-100 mt-4' src="../static/img/wc2.jpg" alt="...">
-            <div class="bottom-right">Studio</div>
+            <div id="carouselExampleFade2" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                
+                {% set count = namespace(value=0) %}
+                {% for photo in studio_photos %}
+                
+                <div class="carousel-item {% if count.value==0 %} active {% endif %}" data-bs-interval="1000" >
+                    <img class='w-100 mt-4' src="{{ url_for('static',filename=photo) }}" alt="...">
+                    <div class="bottom-right">Studio</div>
+                </div>
+                {% set count.value = count.value + 1 %}  
+                {% endfor %}
+                
+            </div>
         </a>
     </div>
 </div>
